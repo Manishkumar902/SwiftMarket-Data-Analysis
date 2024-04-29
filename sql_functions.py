@@ -34,3 +34,6 @@ def read_query(query):
     rows = cursor.fetchall()
     return pd.DataFrame(data=rows, columns=cursor.culmn_names)
 
+query ='Show tables;'
+print(query)
+df = read 
