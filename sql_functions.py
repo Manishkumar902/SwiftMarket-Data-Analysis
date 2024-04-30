@@ -2,7 +2,6 @@
 import os
 
 import mysql.connector
-# from mysql import connector
 from dotenv import load_dotenv
 import pandas as pd
 
@@ -27,13 +26,16 @@ cursor = connection.cursor()
 
 # to read sql query
 def read_query(query):
-    """Reading sql Queries. Only for SELECT quetirs.
-       Returns: pd.DataFrame"""
-    
     cursor.execute(query)
     rows = cursor.fetchall()
-    return pd.DataFrame(data=rows, columns=cursor.culmn_names)
+    return pd.DataFrame(data=rows, columns=cursor.column_names)
 
-query ='Show tables;'
-print(query)
-df = read 
+if __name__=='__main__':
+
+    query = 'Show tables;'
+    print(query)
+    df = read_query(query=query)
+    print(df)
+
+
+
